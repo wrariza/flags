@@ -23,27 +23,27 @@ const allCountries = function () {
       return response.json()
     })
     .then(function (banderas) {
-      for (let index = 0; index < 10; index++) {
+      for (let index = 0; index < banderas.length; index++) {
         pintarInFoBanderas(banderas[index])
       }
     })
 }
 
 const layoutflag = function (info) {
-  return `<section id="${info.name}" class="flag">
+  return `<section id="${info.name}" class="flag"  data-name="${info.name}">
         <img src="${info.flag}" />
         <article>
           <h4>${info.name}</h4>
-          <p>population: ${info.population}</p>
-          <p>Region: ${info.region}</p>
-          <p>Capital: ${info.capital}</p>
+          <p><span>Pulation:</span> ${info.population}</p>
+          <p><span>Region:</span> ${info.region}</p>
+          <p><span>Capital:</span> ${info.capital}</p>
         </article>
       </section>`
 }
 
 const pintarInFoBanderas = function (info) {
-  document.getElementById('flags').innerHTML += layoutflag(info)
-  // eventClickFlagName(info.name)
+  document.getElementById('flags').insertAdjacentHTML('beforeend', layoutflag(info))  
+  eventClickFlagName(info.name)
 }
 
 //////////////////////////////////////////////////////////
@@ -57,11 +57,14 @@ const buscarPais = function () {
   })
 }
 
-// const eventClickFlagName = function(name) {
-//   document.getElementById(name).addEventListener('click', () => {
-//     console.log('sdsadsad')
-//   })
-// }
+const eventClickFlagName = function(name) {
+  const element = document.getElementById(name)
+   element.addEventListener('click', (event) => {
+     if(event && event.currentTarget && event.currentTarget.id){
+      getCountrieByName(event.currentTarget.id)
+     }
+   })
+ }
 
 
 

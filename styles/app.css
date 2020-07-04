@@ -2,6 +2,11 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   background-color: #fafafa;
 }
+body.dark {
+  background-color: #202c36;
+}
+
+// #2B3843
 
 header {
   background-color: #ffffff;
@@ -14,6 +19,11 @@ header {
   -webkit-box-shadow: -1px 3px 7px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 3px 7px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 5px 1px rgba(133, 133, 133, 0.3);
+}
+
+header.dark {
+  background-color: #202c36;
+  color: white;
 }
 
 h1 {

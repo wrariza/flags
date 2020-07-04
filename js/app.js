@@ -66,8 +66,19 @@ const eventClickFlagName = function(name) {
    })
  }
 
+ const darkMode = function () {
+    const element = document.getElementById("darkMode")
+    element.addEventListener("click", () => {
+      const bodyElement = document.getElementById("main")
+      if(bodyElement.classList.contains('dark')) {
+        bodyElement.classList.remove("dark")
+      } else {
+        bodyElement.classList.add("dark")
+      }
+    })
+ }
 
-
+darkMode()
 buscarPais()
 allCountries()
 

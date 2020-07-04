@@ -6,8 +6,6 @@ body.dark {
   background-color: #202c36;
 }
 
-// #2B3843
-
 header {
   background-color: #ffffff;
   width: 100%;
@@ -22,7 +20,7 @@ header {
 }
 
 header.dark {
-  background-color: #202c36;
+  background-color: #2b3843;
   color: white;
 }
 
@@ -53,6 +51,11 @@ section {
   cursor: pointer;
   box-shadow: 0px 0px 5px 1px rgba(133, 133, 133, 0.3);
   overflow: hidden;
+}
+
+.flag.dark {
+  background-color: #2b3843;
+  color: white;
 }
 
 .flag img {

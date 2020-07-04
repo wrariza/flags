@@ -70,10 +70,34 @@ const eventClickFlagName = function(name) {
     const element = document.getElementById("darkMode")
     element.addEventListener("click", () => {
       const bodyElement = document.getElementById("main")
+      // definir header
+      const headerElement = document.getElementById("headerDark")
+      
+      // definir flags
+      const flagsElement = document.getElementsByClassName("flag")
+      
+     
+
       if(bodyElement.classList.contains('dark')) {
         bodyElement.classList.remove("dark")
+        // definir header
+        headerElement.classList.remove("dark")
+        // definir flags
+        
+        for (let index = 0; index < flagsElement.length; index++) {
+          const flag = flagsElement[index];
+          flag.classList.remove('dark')
+        }
       } else {
         bodyElement.classList.add("dark")
+        // definir header
+        headerElement.classList.add("dark")
+        // definir flags
+       
+        for (let index = 0; index < flagsElement.length; index++) {
+          const flag = flagsElement[index];
+          flag.classList.add('dark')
+        }
       }
     })
  }
